@@ -1,0 +1,77 @@
+/* 
+    ===== SUMMARY ======
+    GLOBAL
+    HEADER
+    BODY
+    FOOTER
+*/
+
+:root {
+  --primary-red-color: #d73953;
+  --font-family-base: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+  --font-family-title: "Raleway", Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+/* GLOBAL 
+    ======================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: var(--font-family-base);
+}
+
+/* HEADER
+    ======================= */
+div.App-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--primary-red-color);
+  margin-bottom: 3rem;
+}
+
+div.App-header img {
+  height: 200px;
+  width: 200px;
+}
+
+div.App-header::after {
+  height: 0.2rem;
+  background-color: var(--primary-red-color);
+  width: 100%;
+  content: "";
+}
+
+/* BODY
+    ======================= */
+
+/* FOOTER
+    ======================= */
+
+div.App-footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-style: italic;
+}
+
+div.App-footer:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.2rem;
+  background-color: var(--primary-red-color);
+}
+
+form button {
+  margin-left: .5rem;
+}
+
+form input {
+  margin:0 .5rem;
+}
