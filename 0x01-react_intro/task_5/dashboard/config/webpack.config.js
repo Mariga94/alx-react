@@ -11,16 +11,8 @@ module.exports = {
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
-        use: [
-          "file-loader",
-          {
-            loader: "image-webpack-loader",
-            options: {
-              bypassOnDebug: true, // webpack@1.x
-              disable: true, // webpack@2.x and newer
-            },
-          },
-        ],
+        type: 'asset/resource',
+				loader: 'image-webpack-loader',
       },
       {
         test: /\.m?js$/,
@@ -36,7 +28,9 @@ module.exports = {
   },
   devtool: "inline-source-map",
   devServer: {
-    static: "./dist",
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
     hot: true,
   },
   output: {
