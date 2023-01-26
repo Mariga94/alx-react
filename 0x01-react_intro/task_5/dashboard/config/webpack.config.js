@@ -1,4 +1,6 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -10,31 +12,34 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
-        type: 'asset/resource',
-				loader: 'image-webpack-loader',
+        test: /\.(gif|png|jpe?g|svg|ico)$/i,
+        type: "asset/resource",
+        loader: "image-webpack-loader",
       },
       {
-        test: /\.m?js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: [["@babel/preset-env", { targets: "defaults" }]],
-          },
-        },
+        loader: "babel-loader",
+        options: { presets: ["@babel/env", "@babel/preset-react"] },
       },
     ],
   },
   devtool: "inline-source-map",
   devServer: {
+    hot: true,
     static: {
       directory: path.join(__dirname, 'dist'),
     },
-    hot: true,
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: "./dist/index.html",
+      title: "Holberton Dashboard",
+    }),
+  ],
 };
