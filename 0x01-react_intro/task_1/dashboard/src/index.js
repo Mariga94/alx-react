@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import Notification from "./Notification";
+import Notifications from "./Notifications";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const rootNotifications = ReactDOM.createRoot(
@@ -15,6 +15,6 @@ root.render(
 
 rootNotifications.render(
   <React.StrictMode>
-    <Notification />
+    <Notifications />
   </React.StrictMode>
 );

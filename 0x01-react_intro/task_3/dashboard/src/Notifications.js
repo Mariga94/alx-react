@@ -2,7 +2,7 @@ import React from "react";
 import "./Notifications.css";
 import closeIcon from "./close-icon.png";
 import { getLatestNotification } from "./utils";
-export default function Notification() {
+export default function Notifications() {
   return (
     <div className="Notifications">
       <button
