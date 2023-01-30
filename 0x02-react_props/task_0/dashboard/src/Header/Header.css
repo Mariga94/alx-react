@@ -1,0 +1,22 @@
+/* HEADER
+    ======================= */
+div.App-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--primary-red-color);
+  margin-bottom: 3rem;
+}
+
+div.App-header img {
+  height: 200px;
+  width: 200px;
+}
+
+div.App-header::after {
+  height: 0.2rem;
+  background-color: var(--primary-red-color);
+  width: 100%;
+  content: "";
+}

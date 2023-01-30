@@ -1,0 +1,25 @@
+/* 
+    ===== SUMMARY ======
+    GLOBAL
+    HEADER
+    BODY
+    FOOTER
+*/
+
+:root {
+  --primary-red-color: #d73953;
+  --font-family-base: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+  --font-family-title: "Raleway", Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+/* GLOBAL 
+    ======================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: var(--font-family-base);
+}
+
+
