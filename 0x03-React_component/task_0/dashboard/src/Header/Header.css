@@ -1,0 +1,23 @@
+/* HEADER
+    ======================= */
+div.App-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  color:rgb(228, 55, 24);
+  margin-bottom: 3rem;
+  border-bottom: 2px solid rgb(228, 55, 24);
+}
+
+div.App-header img {
+  height: 200px;
+  width: 200px;
+}
+
+div.App-header::after {
+  height: 0.2rem;
+  background-color: rgb(228, 55, 24);
+  width: 100%;
+  content: "";
+}
