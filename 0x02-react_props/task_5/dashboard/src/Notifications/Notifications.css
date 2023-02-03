@@ -1,0 +1,26 @@
+div.Notifications {
+  border: 2px dotted #f53e3e;
+  padding: 0.5rem 0.5rem;
+  position: relative;
+  width: 25rem;
+  float: right;
+
+}
+
+button img {
+  height: 15px;
+  width: 15px;
+}
+
+li[data-priority="default"] {
+  color: blue;
+}
+
+li[data-priority="urgent"] {
+  color: red;
+}
+
+.menuItem {
+  text-align: right;
+  font-weight: bold;
+}

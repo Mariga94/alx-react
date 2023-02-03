@@ -1,0 +1,19 @@
+/* 
+    ===== SUMMARY ======
+    GLOBAL
+    HEADER
+    BODY
+    FOOTER
+*/
+
+/* GLOBAL 
+    ======================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+

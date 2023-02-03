@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+thead th {
+    width: 50%;
+  }
+
+th {
+  letter-spacing: 2px;
+}
+
+td {
+  letter-spacing: 1px;
+}
+
+tbody td {
+  text-align: center;
+}
+
+thead th{
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+  
