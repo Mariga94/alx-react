@@ -7,24 +7,24 @@ configure({ adapter: new Adapter() });
 
 describe("App", () => {
   let events;
-
   beforeEach(() => {
+    events = {};
     document.addEventListener = jest.fn((event, callback) => {
       events[event] = callback;
     });
   });
 
-  it("<App /> renders without crashing", () => {
+  test("<App /> renders without crashing", () => {
     const wrapper = shallow(<App />);
     expect(wrapper).toEqual(wrapper);
   });
 
-  it("verify that when the keys 'control' and 'h' are pressed the 'logOut' function", (done) => {
+  test("verify that when the keys 'control' and 'h' are pressed the 'logOut' function", (done) => {
     const logOut = jest.fn(() => void 0);
     shallow(<App />);
     window.alert = logOut;
-    events.keydown({ keyCode: 72, ctrlKey: 72 });
-    except(logOut).toHaveBeenCalled();
+    events.keydown({ keyCode: 72, ctrlKey: true });
+    expect(logOut).toHaveBeenCalled();
     done();
   });
 });
