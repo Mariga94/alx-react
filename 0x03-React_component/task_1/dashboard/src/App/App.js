@@ -13,6 +13,11 @@ class App extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
+
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleClick);
+  }
+  
   prototype = {
     isLoggedIn: PropTypes.bool,
     logOut: PropTypes.func,
@@ -20,12 +25,14 @@ class App extends React.Component {
 
   static defaultProps = {
     isLoggedIn: true,
-    logOut: function () {void(0)},
+    logOut: function () {
+      void 0;
+    },
   };
 
   handleClick(event) {
     if (event.keyCode === 72 && event.ctrlKey) {
-      alert ('Logging you out');
+      alert("Logging you out");
       this.props.logOut();
     }
   }
