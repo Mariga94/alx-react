@@ -1,0 +1,33 @@
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+
+export default function CourseListRow(props) {
+  const { isHeader, textFirstCell, textSecondCell } = props;
+  let trContent = "";
+  const rowStyle = { backgroundColor: "#f5f5f5ab" };
+  const headerStyle = { backgroundColor: "#deb5b545" };
+  const style = isHeader ? headerStyle : rowStyle;
+
+  if (isHeader) {
+    if (textSecondCell === null) {
+      trContent = (<th colSpan='2'>{textFirstCell}</th>);
+    }
+    else {
+      trContent = (<React.Fragment><th>{textFirstCell}</th><th>{textSecondCell}</th></React.Fragment>);
+    }
+  } else {
+    trContent = (<React.Fragment><td>{textFirstCell}</td><td>{textSecondCell}</td></React.Fragment>);
+  }
+  return (<tr style={style}>{trContent}</tr>);
+}
+
+CourseListRow.propTypes = {
+  isHeader: PropTypes.bool,
+  textFirstCell: PropTypes.string.isRequired,
+  textSecondCell: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+};
+
+CourseListRow.defaultProps = {
+  isHeader: true,
+  textSecondCell: null,
+};

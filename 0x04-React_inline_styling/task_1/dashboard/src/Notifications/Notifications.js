@@ -1,0 +1,102 @@
+import React, { Component } from "react";
+import { StyleSheet, css } from "aphrodite";
+import closeIcon from "../assets/close-icon.png";
+import { getLatestNotification } from "../utils/utils";
+import NotificationItem from "./NotificationItem";
+import PropTypes from "prop-types";
+import NotificationItemShape from "./NotificationItemShape";
+
+export default class Notifications extends Component {
+  constructor(props) {
+    super(props);
+    this.markAsRead = this.markAsRead.bind(this);
+  }
+
+  shouldComponentUpdate(nextProps) {
+    if (
+      this.props.listNotifications.length < nextProps.listNotifications.length
+    ) {
+      return true;
+    }
+    return false;
+  }
+
+  markAsRead(id) {
+    console.log(`Notification ${id} has been marked as read`);
+  }
+  render() {
+    let { displayDrawer } = this.props;
+
+    return (
+      <div className="NotificationsComponent">
+        <div className={css(styles.menuItem)}>Your notifications</div>
+        {displayDrawer && (
+          <div className="Notifications">
+            <button
+              style={{
+                color: "#3a3a3a",
+                fontWeight: "bold",
+                background: "none",
+                border: "none",
+                fontSize: "15px",
+                position: "absolute",
+                right: "3px",
+                top: "3px",
+                cursor: "pointer",
+                outline: "none",
+              }}
+              aria-label="Close"
+              onClick={(e) => {
+                console.log("Close button has been clicked");
+              }}
+            >
+              <img src={closeIcon} alt="close icon" />
+            </button>
+            <p>Here is the list of notifications</p>
+            <ul>
+              <NotificationItem type="default" value="New course available" />
+              <NotificationItem type="urgent" value="New resume available" />
+              <NotificationItem
+                type="urgent"
+                html={{ __html: getLatestNotification() }}
+              />
+            </ul>
+          </div>
+        )}
+      </div>
+    );
+  }
+}
+
+Notifications.protoTypes = {
+  displayDrawer: PropTypes.bool,
+  listNotifications: PropTypes.arrayOf(NotificationItemShape),
+};
+
+Notifications.defaultProps = {
+  displayDrawer: false,
+  listNotifications: [],
+};
+
+const styles = StyleSheet.create({
+  Notifications: {
+    border: "2px solid #e1484c",
+    borderStyle: "dashed",
+    padding: "10px",
+    textAlign: "left",
+    flexDirection: "column",
+    position: "absolute",
+    right: "12px",
+    flexWrap: "wrap",
+    alignItems: "flex-end",
+  },
+  menuItem: {
+    textAlign: "right",
+    fontWeight: "bold",
+    fontFamily: "none",
+    marginBottom: "10px",
+  },
+  notificationBox: {
+    marginRight: "60px",
+  },
+});
