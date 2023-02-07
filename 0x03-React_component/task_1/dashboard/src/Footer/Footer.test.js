@@ -8,7 +8,7 @@ describe("Footer component", () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Footer />);
+    wrapper = shallow(<Footer shouldRender />);
   });
 
   test("renders without crashing", () => {
@@ -16,6 +16,7 @@ describe("Footer component", () => {
   });
 
   test("renders at the very least 'Copyright'", () => {
-    expect(wrapper.find('p').html()).toMatch(/Copyright/);
+    expect(wrapper.find('p').text()).toContain('Copyright');
   });
 });
+
