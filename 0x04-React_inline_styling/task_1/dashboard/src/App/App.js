@@ -91,20 +91,20 @@ class App extends React.Component {
 }
 
 const style = StyleSheet.create({
-	body: {
-	  backgroundColor: '#fff',
-	  padding: '4rem',
-	  minHeight: '31rem',
-	},
-	footer: {
-	  backgroundColor: '#fff',
-	  textAlign: 'center',
-	  width: '100%',
-	  bottom: '0px',
-	  borderTop: '3px solid #e1354b',
-	  fontStyle: 'italic',
-	  padding: '1rem 0'
-	}
-  });
+  body: {
+    backgroundColor: "#fff",
+    padding: "4rem",
+    minHeight: "31rem",
+  },
+  footer: {
+    backgroundColor: "#fff",
+    textAlign: "center",
+    width: "100%",
+    bottom: "0px",
+    borderTop: "3px solid #e1354b",
+    fontStyle: "italic",
+    padding: "1rem 0",
+  },
+});
 
 export default App;

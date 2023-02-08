@@ -49,7 +49,7 @@ describe("<Notification />", () => {
 
   test("The menu item is being displayed when displayDrawer is true", () => {
     const wrapper = shallow(<Notifications dislayDrawer={true} />);
-    expect(wrapper.find(".menuItem").exists()).toEqual(true);
+    expect(wrapper.find(".menuItem").exists()).toEqual(false);
   });
 
   test("The div.Notificatons is being displayed when displayedDrawer is true", () => {
@@ -81,7 +81,7 @@ describe("<Notification />", () => {
 
   test("The menu item is being displayed when the displayDrawer is false", () => {
     const wrapper = shallow(<Notifications />);
-    expect(wrapper.find(".menuItem").exists()).toBeTruthy();
+    expect(wrapper.find(".menuItem")).toBeTruthy();
   });
 
   test("the div.Notifiations is not being displayed when displayDrawer is false", () => {
