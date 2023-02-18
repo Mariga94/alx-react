@@ -1,5 +1,6 @@
+import immutable from 'immutable';
+
 export default function accessImmutableObject(object, array) {
-    for (const key in array) {
-        return object[key].first
-    }
+  const deepData = immutable.fromJS(object);
+  return deepData.getIn(array, undefined);
 }
