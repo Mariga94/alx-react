@@ -1,8 +1,9 @@
-import getAllNotificationsByUser from "./notifications";
+import { getAllNotificationsByUser } from "./notifications";
 
 describe("Test notifications", () => {
-  it("getAllNotificationsByUser(5debd764a7c57c7839d722e9 ) returns data", () => {
-    const expected = [
+  it("returns data", () => {
+    const userId = "5debd764a7c57c7839d722e9";
+    const res = [
       {
         guid: "2d8e40be-1c78-4de0-afc9-fcc147afd4d2",
         isRead: true,
@@ -18,10 +19,8 @@ describe("Test notifications", () => {
           "Non diam phasellus vestibulum lorem sed risus ultricies. Tellus mauris a diam maecenas sed",
       },
     ];
-    expect(
-      getAllNotificationsByUser("5debd764a7c57c7839d722e9").toEqual(
-        expect.arrayContaining(expected)
-      )
+    expect(getAllNotificationsByUser(userId)).toEqual(
+      expect.arrayContaining(res)
     );
   });
 });
