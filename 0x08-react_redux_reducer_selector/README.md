@@ -1,5 +1,5 @@
 # 0x08. React Redux reducer+selector
-## At the end of the project you should be able to explain
+## :dart: At the end of the project you should be able to explain
 - The purpose of a reducer and the role it plays within your application
 - Why a reducer should stay as pure as possible
 - Why mutations should not happend within a reducer
@@ -7,7 +7,7 @@
 - The use of Normalzr within the app
 - Selectors: what they are and when to use them
 
-## Tasks
+## :hammer: Tasks
 |[Write a basic reducer]() | 
 - Create the basic state 
 - Create the reducer function
@@ -28,5 +28,5 @@
 - Create a schema |
 |[Selectors]() | |
 
-## Acknowledgment
+## :black_nib: Acknowledgment
 This is part of the [ALX Software Engineering](https://www.alxafrica.com/software-engineering/) program.
